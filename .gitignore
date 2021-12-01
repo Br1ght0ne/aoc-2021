@@ -1,3 +1,18 @@
+.vscode/
+
+# Zig
 **/zig-cache/
 **/lib*.a
 **/*.o
+
+# Elixir
+**/.elixir_ls/
+/elixir/_build/
+/elixir/cover/
+/elixir/deps/
+/elixir/doc/
+/elixir/.fetch
+/elixir/erl_crash.dump
+/elixir/*.ez
+/elixir/aoc_2021-*.tar
+/elixir/tmp/
