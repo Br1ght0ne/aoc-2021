@@ -16,3 +16,6 @@
 /elixir/*.ez
 /elixir/aoc_2021-*.tar
 /elixir/tmp/
+
+# Rust
+/rust/target/
