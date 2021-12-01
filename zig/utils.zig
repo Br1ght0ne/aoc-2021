@@ -22,6 +22,16 @@ pub const InputReader = struct {
     pub fn readLine(self: InputReader) !?[]u8 {
         return self.source.reader().readUntilDelimiterOrEof(self.buf, '\n');
     }
+
+    pub fn readAllInts(self: InputReader) ![]u32 {
+        const LineList = std.ArrayList(u32);
+        var list = LineList.init(std.heap.page_allocator);
+        while (try self.readLine()) |line| {
+            const n: u32 = try std.fmt.parseInt(u32, line, 10);
+            try list.append(n);
+        }
+        return list.toOwnedSlice();
+    }
 };
 
 pub fn readInputFile(comptime path: []const u8) InputReader {
