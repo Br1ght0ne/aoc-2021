@@ -17,6 +17,10 @@ pub fn part2(input: impl Iterator<Item = u32>) -> usize {
     part1(sums)
 }
 
+pub fn part2_updated(input: impl Iterator<Item = u32>) -> usize {
+    input.tuple_windows().filter(|(a, _, _, d)| a < d).count()
+}
+
 #[cfg(test)]
 mod tests {
     use std::io::BufReader;
@@ -33,5 +37,11 @@ mod tests {
     #[test]
     fn test_part2() {
         assert_eq!(part2(process_input(BufReader::new(INPUT.as_bytes()))), 1127);
+    }
+
+    #[test]
+    fn test_part2_updated() {
+        let input = process_input(BufReader::new(INPUT.as_bytes()));
+        assert_eq!(part2_updated(input), 1127);
     }
 }

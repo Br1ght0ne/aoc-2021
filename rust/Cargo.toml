@@ -7,3 +7,10 @@ edition = "2021"
 
 [dependencies]
 itertools = "0.10"
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "day1"
+harness = false
